@@ -1,11 +1,6 @@
-//
-//  TrailingIconLabelStyle.swift
-//  Scrumdinger
-//
-//  Created by 黄熙 on 1/1/23.
-//
-
-import Foundation
+/*
+See LICENSE folder for this sample’s licensing information.
+*/
 
 import SwiftUI
 
@@ -17,8 +12,6 @@ struct TrailingIconLabelStyle: LabelStyle {
         }
     }
 }
-
-
 
 extension LabelStyle where Self == TrailingIconLabelStyle {
     static var trailingIcon: Self { Self() }

@@ -1,19 +1,17 @@
-//
-//  CardView.swift
-//  Scrumdinger
-//
-//  Created by 黄熙 on 1/1/23.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+*/
 
 import SwiftUI
 
 struct CardView: View {
     let scrum: DailyScrum
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text(scrum.title)
-                .font(.headline)
                 .accessibilityAddTraits(.isHeader)
+                .font(.headline)
             Spacer()
             HStack {
                 Label("\(scrum.attendees.count)", systemImage: "person.3")
@@ -33,7 +31,7 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var scrum = DailyScrum.sampleData[0]
     static var previews: some View {
-        CardView(scrum:scrum)
+        CardView(scrum: scrum)
             .background(scrum.theme.mainColor)
             .previewLayout(.fixed(width: 400, height: 60))
     }
