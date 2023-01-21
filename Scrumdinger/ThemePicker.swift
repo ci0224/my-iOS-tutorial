@@ -1,9 +1,6 @@
-//
-//  ThemePicker.swift
-//  Scrumdinger
-//
-//  Created by 黄熙 on 1/3/23.
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+*/
 
 import SwiftUI
 

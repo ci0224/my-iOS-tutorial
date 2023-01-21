@@ -13,7 +13,7 @@ struct MeetingView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 16.0)
+            RoundedRectangle(cornerRadius: 16)
                 .fill(scrum.theme.mainColor)
             VStack {
                 MeetingHeaderView(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, theme: scrum.theme)
@@ -21,22 +21,21 @@ struct MeetingView: View {
                     .strokeBorder(lineWidth: 24)
                 MeetingFooterView(speakers: scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
             }
-            .padding()
-            .foregroundColor(scrum.theme.accentColor)
-            .onAppear {
-                scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
-                scrumTimer.speakerChangedAction = {
-                    player.seek(to: .zero)
-                    player.play()
-                }
-                scrumTimer.startScrum()
-            }
-            .onDisappear {
-                scrumTimer.stopScrum()
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            
         }
+        .padding()
+        .foregroundColor(scrum.theme.accentColor)
+        .onAppear {
+            scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
+            scrumTimer.speakerChangedAction = {
+                player.seek(to: .zero)
+                player.play()
+            }
+            scrumTimer.startScrum()
+        }
+        .onDisappear {
+            scrumTimer.stopScrum()
+        }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
