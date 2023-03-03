@@ -30,6 +30,7 @@
 		82D05183296792A6003D3DDF /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D05182296792A6003D3DDF /* MeetingHeaderView.swift */; };
 		82D0518929679908003D3DDF /* MeetingFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D0518829679908003D3DDF /* MeetingFooterView.swift */; };
 		82E2FDED29B1D99200045BB0 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2FDEC29B1D99200045BB0 /* History.swift */; };
+		82E2FDEF29B1E39F00045BB0 /* ScrumStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E2FDEE29B1E39F00045BB0 /* ScrumStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		82D05182296792A6003D3DDF /* MeetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingHeaderView.swift; sourceTree = "<group>"; };
 		82D0518829679908003D3DDF /* MeetingFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingFooterView.swift; sourceTree = "<group>"; };
 		82E2FDEC29B1D99200045BB0 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		82E2FDEE29B1E39F00045BB0 /* ScrumStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				82D0516F29619802003D3DDF /* Theme.swift */,
 				82D05171296199C1003D3DDF /* DailyScrum.swift */,
 				82E2FDEC29B1D99200045BB0 /* History.swift */,
+				82E2FDEE29B1E39F00045BB0 /* ScrumStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				82D0518129655F31003D3DDF /* ThemePicker.swift in Sources */,
 				82A462A6297C92B0007F80F8 /* ScrumProgressViewStyle.swift in Sources */,
 				82D0518929679908003D3DDF /* MeetingFooterView.swift in Sources */,
+				82E2FDEF29B1E39F00045BB0 /* ScrumStore.swift in Sources */,
 				82D05172296199C1003D3DDF /* DailyScrum.swift in Sources */,
 				82D0517C2964FA1D003D3DDF /* DetailView.swift in Sources */,
 				82D05183296792A6003D3DDF /* MeetingHeaderView.swift in Sources */,
