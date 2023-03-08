@@ -21,18 +21,18 @@ struct ScrumdingerApp: App {
                         }
                     }
                 }
-                .task {
-                    do {
-                        store.scrums = try await ScrumStore.load()
-                    } catch {
-                        errorWrapper = ErrorWrapper(error: error, guidance: "Scrumdinger will load sample data and continue.")
-                    }
+            }
+            .task {
+                do {
+                    store.scrums = try await ScrumStore.load()
+                } catch {
+                    errorWrapper = ErrorWrapper(error: error, guidance: "Scrumdinger will load sample data and continue.")
                 }
-                .sheet(item: $errorWrapper, onDismiss: {
-                    store.scrums = DailyScrum.sampleData
-                }) { wrapper in
-                    ErrorView(errorWrapper: wrapper)
-                }
+            }
+            .sheet(item: $errorWrapper, onDismiss: {
+                store.scrums = DailyScrum.sampleData
+            }) { wrapper in
+                ErrorView(errorWrapper: wrapper)
             }
         }
     }
