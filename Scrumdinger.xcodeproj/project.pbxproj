@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		824E069529BD484700663004 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824E069429BD484700663004 /* HistoryView.swift */; };
+		82649B3829BD3E5F00632360 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82649B3729BD3E5F00632360 /* SpeechRecognizer.swift */; };
 		82A462A0297C9273007F80F8 /* ScrumTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4629F297C9273007F80F8 /* ScrumTimer.swift */; };
 		82A462A2297C9279007F80F8 /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A462A1297C9279007F80F8 /* AVPlayer+Ding.swift */; };
 		82A462A4297C928E007F80F8 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 82A462A3297C928E007F80F8 /* ding.wav */; };
@@ -55,6 +57,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		824E069429BD484700663004 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HistoryView.swift; path = "../../../../Library/Mobile Documents/com~apple~CloudDocs/HistoryView.swift"; sourceTree = "<group>"; };
+		82649B3729BD3E5F00632360 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		82A4629F297C9273007F80F8 /* ScrumTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrumTimer.swift; sourceTree = "<group>"; };
 		82A462A1297C9279007F80F8 /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
 		82A462A3297C928E007F80F8 /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 				82E2FDF429B3836C00045BB0 /* ErrorView.swift */,
 				82E2FDF629B859C500045BB0 /* MeetingTimerView.swift */,
 				82E2FDF829B860E400045BB0 /* SpeakerArc.swift */,
+				824E069429BD484700663004 /* HistoryView.swift */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 				82E2FDEC29B1D99200045BB0 /* History.swift */,
 				82E2FDEE29B1E39F00045BB0 /* ScrumStore.swift */,
 				82E2FDF029B3831B00045BB0 /* ErrorWrapper.swift */,
+				82649B3729BD3E5F00632360 /* SpeechRecognizer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -340,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				82E2FDED29B1D99200045BB0 /* History.swift in Sources */,
+				824E069529BD484700663004 /* HistoryView.swift in Sources */,
 				82D0518129655F31003D3DDF /* ThemePicker.swift in Sources */,
 				82A462A6297C92B0007F80F8 /* ScrumProgressViewStyle.swift in Sources */,
 				82D0518929679908003D3DDF /* MeetingFooterView.swift in Sources */,
@@ -355,6 +362,7 @@
 				82A462A0297C9273007F80F8 /* ScrumTimer.swift in Sources */,
 				82D0517829629322003D3DDF /* ScrumsView.swift in Sources */,
 				82D05147296192F5003D3DDF /* MeetingView.swift in Sources */,
+				82649B3829BD3E5F00632360 /* SpeechRecognizer.swift in Sources */,
 				82E2FDF529B3836C00045BB0 /* ErrorView.swift in Sources */,
 				82D05145296192F5003D3DDF /* ScrumdingerApp.swift in Sources */,
 				82D0517E29655B9D003D3DDF /* ThemeView.swift in Sources */,
@@ -519,6 +527,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Scrumdinger/Preview Content\"";
+				DEVELOPMENT_TEAM = 7L7A5A22CY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Scrumdinger/Info.plist;
@@ -529,6 +538,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -550,6 +560,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Scrumdinger/Preview Content\"";
+				DEVELOPMENT_TEAM = 7L7A5A22CY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Scrumdinger/Info.plist;
@@ -560,6 +571,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

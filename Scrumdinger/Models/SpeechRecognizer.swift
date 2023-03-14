@@ -1,13 +1,8 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-*/
-
 import AVFoundation
 import Foundation
 import Speech
 import SwiftUI
 
-/// A helper for transcribing speech to text using SFSpeechRecognizer and AVAudioEngine.
 class SpeechRecognizer: ObservableObject {
     enum RecognizerError: Error {
         case nilRecognizer
@@ -25,17 +20,13 @@ class SpeechRecognizer: ObservableObject {
         }
     }
     
-    @Published var transcript: String = ""
+    var transcript: String = ""
     
     private var audioEngine: AVAudioEngine?
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
     private let recognizer: SFSpeechRecognizer?
     
-    /**
-     Initializes a new speech recognizer. If this is the first time you've used the class, it
-     requests access to the speech recognizer and the microphone.
-     */
     init() {
         recognizer = SFSpeechRecognizer()
         
@@ -60,12 +51,6 @@ class SpeechRecognizer: ObservableObject {
         reset()
     }
     
-    /**
-        Begin transcribing audio.
-     
-        Creates a `SFSpeechRecognitionTask` that transcribes speech to text until you call `stopTranscribing()`.
-        The resulting transcription is continuously written to the published `transcript` property.
-     */
     func transcribe() {
         DispatchQueue(label: "Speech Recognizer Queue", qos: .background).async { [weak self] in
             guard let self = self, let recognizer = self.recognizer, recognizer.isAvailable else {
@@ -77,20 +62,7 @@ class SpeechRecognizer: ObservableObject {
                 let (audioEngine, request) = try Self.prepareEngine()
                 self.audioEngine = audioEngine
                 self.request = request
-                
-                self.task = recognizer.recognitionTask(with: request) { result, error in
-                    let receivedFinalResult = result?.isFinal ?? false
-                    let receivedError = error != nil
-                    
-                    if receivedFinalResult || receivedError {
-                        audioEngine.stop()
-                        audioEngine.inputNode.removeTap(onBus: 0)
-                    }
-                    
-                    if let result = result {
-                        self.speak(result.bestTranscription.formattedString)
-                    }
-                }
+                self.task = recognizer.recognitionTask(with: request, resultHandler: self.recognitionHandler(result:error:))
             } catch {
                 self.reset()
                 self.speakError(error)
@@ -98,12 +70,10 @@ class SpeechRecognizer: ObservableObject {
         }
     }
     
-    /// Stop transcribing audio.
     func stopTranscribing() {
         reset()
     }
     
-    /// Reset the speech recognizer.
     func reset() {
         task?.cancel()
         audioEngine?.stop()
@@ -131,6 +101,20 @@ class SpeechRecognizer: ObservableObject {
         try audioEngine.start()
         
         return (audioEngine, request)
+    }
+    
+    private func recognitionHandler(result: SFSpeechRecognitionResult?, error: Error?) {
+        let receivedFinalResult = result?.isFinal ?? false
+        let receivedError = error != nil
+        
+        if receivedFinalResult || receivedError {
+            audioEngine?.stop()
+            audioEngine?.inputNode.removeTap(onBus: 0)
+        }
+        
+        if let result = result {
+            speak(result.bestTranscription.formattedString)
+        }
     }
     
     private func speak(_ message: String) {
